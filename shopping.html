@@ -1,0 +1,338 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEasy - Online Shopping</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #172554;
+            color: white;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav h2 {
+            margin: 0;
+            color: #facc15;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        /* Search Bar */
+        .search {
+            padding: 10px;
+            width: 220px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Promotional Banner */
+        .banner {
+            background: linear-gradient(120deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 15px;
+        }
+
+        .banner h1 {
+            font-size: 35px;
+            margin: 0 0 10px;
+        }
+
+        .banner p {
+            font-size: 18px;
+        }
+
+        .banner button {
+            background-color: #facc15;
+            color: #172554;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Categories */
+        .categories {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .categories button {
+            background-color: white;
+            border: 1px solid #2563eb;
+            color: #2563eb;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Products */
+        .heading {
+            text-align: center;
+            color: #172554;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product h3 {
+            color: #172554;
+        }
+
+        .price {
+            color: #16a34a;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: gray;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+
+        .rating {
+            color: #f59e0b;
+        }
+
+        .description {
+            color: #555;
+            font-size: 14px;
+            min-height: 34px;
+        }
+
+        .product button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .product button:hover {
+            background-color: #172554;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .banner h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>ShopEasy 🛍️</h2>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <input type="text" class="search"
+               placeholder="Search products...">
+    </nav>
+
+    <section class="banner" id="home">
+        <h1>Big Shopping Festival!</h1>
+        <p>Discover amazing products with discounts up to 50% OFF.</p>
+        <button onclick="location.href='#products'">
+            Shop Now
+        </button>
+    </section>
+
+    <section class="categories" id="categories">
+        <h2 class="heading">Shop by Category</h2>
+
+        <button onclick="location.href='#electronics'">
+            Electronics
+        </button>
+
+        <button onclick="location.href='#fashion'">
+            Fashion
+        </button>
+
+        <button onclick="location.href='#accessories'">
+            Accessories
+        </button>
+
+        <button onclick="location.href='#homeproducts'">
+            Home
+        </button>
+    </section>
+
+    <h2 class="heading" id="products">Featured Products</h2>
+
+    <section class="products">
+
+        <div class="product" id="electronics">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
+                 alt="Wireless Headphones">
+
+            <h3>Wireless Headphones</h3>
+            <p class="description">
+                High-quality sound with comfortable design.
+            </p>
+
+            <p class="rating">★★★★★ (4.8)</p>
+            <p class="price">₹1,499
+                <span class="old-price">₹2,999</span>
+            </p>
+            <p>50% OFF</p>
+
+            <button onclick="alert('Wireless Headphones added to cart!')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" id="fashion">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"
+                 alt="Casual T-shirt">
+
+            <h3>Casual T-Shirt</h3>
+            <p class="description">
+                Stylish cotton T-shirt for everyday wear.
+            </p>
+
+            <p class="rating">★★★★☆ (4.5)</p>
+            <p class="price">₹499
+                <span class="old-price">₹999</span>
+            </p>
+            <p>50% OFF</p>
+
+            <button onclick="alert('Casual T-Shirt added to cart!')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" id="accessories">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+                 alt="Smart Watch">
+
+            <h3>Smart Watch</h3>
+            <p class="description">
+                Track your fitness and daily activities.
+            </p>
+
+            <p class="rating">★★★★★ (4.7)</p>
+            <p class="price">₹1,999
+                <span class="old-price">₹3,999</span>
+            </p>
+            <p>50% OFF</p>
+
+            <button onclick="alert('Smart Watch added to cart!')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" id="homeproducts">
+            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80"
+                 alt="Table Lamp">
+
+            <h3>Modern Table Lamp</h3>
+            <p class="description">
+                Beautiful lamp for your home and study table.
+            </p>
+
+            <p class="rating">★★★★☆ (4.3)</p>
+            <p class="price">₹799
+                <span class="old-price">₹1,599</span>
+            </p>
+            <p>50% OFF</p>
+
+            <button onclick="alert('Modern Table Lamp added to cart!')">
+                Add to Cart
+            </button>
+        </div>
+
+    </section>
+
+    <footer id="contact">
+        <h3>ShopEasy Online Store</h3>
+        <p>Happy Shopping! Quality Products at Great Prices.</p>
+        <p>Contact: support@shopeasy.example</p>
+        <p>© 2026 ShopEasy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
