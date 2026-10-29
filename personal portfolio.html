@@ -1,43 +1,34 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>My Personal Portfolio</title>
-
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f4f8;
             color: #222;
             line-height: 1.6;
         }
-
         header {
             background: linear-gradient(135deg, #141e30, #243b55);
             color: white;
             text-align: center;
             padding: 35px 15px;
-            animation: appear 1.5s;
         }
-
         header h1 {
             font-size: 36px;
         }
-
         header p {
             font-size: 18px;
         }
-
         nav {
             background-color: #0077b6;
             text-align: center;
@@ -46,7 +37,6 @@
             top: 0;
             z-index: 10;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -55,12 +45,10 @@
             display: inline-block;
             transition: 0.3s;
         }
-
         nav a:hover {
             color: #ffd166;
             transform: translateY(-3px);
         }
-
         section {
             background-color: white;
             margin: 25px auto;
@@ -69,35 +57,21 @@
             max-width: 1000px;
             border-radius: 12px;
             box-shadow: 0 4px 12px #00000015;
-            animation: appear 1s;
         }
-
         h2 {
             color: #0077b6;
             margin-bottom: 15px;
             border-bottom: 2px solid #00b4d8;
             padding-bottom: 8px;
         }
-
         .profile {
             text-align: center;
         }
-
-        .profile img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid #0077b6;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
-
         .skills span {
             background-color: #0077b6;
             color: white;
@@ -105,12 +79,10 @@
             border-radius: 20px;
             transition: 0.3s;
         }
-
         .skills span:hover {
             background-color: #023e8a;
             transform: scale(1.08);
         }
-
         .project {
             background-color: #eaf6ff;
             padding: 15px;
@@ -119,12 +91,10 @@
             border-radius: 5px;
             transition: 0.3s;
         }
-
         .project:hover {
             transform: translateX(8px);
             background-color: #d8efff;
         }
-
         .button {
             display: inline-block;
             background-color: #0077b6;
@@ -135,12 +105,10 @@
             border-radius: 5px;
             transition: 0.3s;
         }
-
         .button:hover {
             background-color: #023e8a;
             transform: scale(1.05);
         }
-
         input, textarea {
             width: 100%;
             padding: 12px;
@@ -149,7 +117,6 @@
             border-radius: 5px;
             font-family: Arial, sans-serif;
         }
-
         button {
             background-color: #0077b6;
             color: white;
@@ -159,58 +126,23 @@
             cursor: pointer;
             font-size: 16px;
         }
-
         button:hover {
             background-color: #023e8a;
         }
-
         footer {
             background-color: #141e30;
             color: white;
             text-align: center;
             padding: 20px;
         }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive design for mobile phones */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 27px;
-            }
-
-            nav a {
-                margin: 5px;
-                font-size: 14px;
-            }
-
-            section {
-                width: 94%;
-                padding: 18px;
-            }
-        }
     </style>
 </head>
-
 <body>
-
-    <!-- Header -->
     <header>
         <h1>My Personal Portfolio</h1>
         <p>Welcome to my Website!</p>
         <p>Student | Learner | Future Developer</p>
     </header>
-
-    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#education">Education</a>
@@ -221,18 +153,11 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <!-- Profile -->
     <section id="home" class="profile">
-        <img src="gani.jpg.jpeg" height="20px" width="20px" radius="5px">
-             alt="My Profile Photo">
         <h2>About Me</h2>
-        <p>Hello! I am <b>Ganesh Kumar</b>, a B.Tech student
-        interested in technology, programming, and web development.</p>
+        <p>Hello! I am <b>Ganesh Kumar</b>, a B.Tech student interested in technology, programming, and web development.</p>
         <p>My goal is to learn new skills and become a successful developer.</p>
     </section>
-
-    <!-- Education -->
     <section id="education">
         <h2>Educational Qualifications</h2>
         <ul>
@@ -241,8 +166,6 @@
             <li><b>School:</b> Flora EM school</li>
         </ul>
     </section>
-
-    <!-- Skills -->
     <section id="skills">
         <h2>Technical Skills</h2>
         <div class="skills">
@@ -252,8 +175,6 @@
             <span>Communication</span>
         </div>
     </section>
-
-    <!-- Hobbies -->
     <section id="hobbies">
         <h2>My Hobbies</h2>
         <ul>
@@ -263,31 +184,24 @@
             <li>Exploring AI and Machine Learning</li>
         </ul>
     </section>
-
-    <!-- Projects -->
     <section id="projects">
         <h2>My Projects</h2>
-
         <div class="project">
             <h3>1. Personal Portfolio Website</h3>
             <p>A website to display my profile, skills, and achievements.</p>
             <p><b>Technologies:</b> HTML and CSS</p>
         </div>
-
         <div class="project">
             <h3>2. Family Tree Website</h3>
             <p>A webpage displaying family generations in an organized way.</p>
             <p><b>Technologies:</b> HTML and CSS</p>
         </div>
-
         <div class="project">
             <h3>3. Student Calculator</h3>
             <p>A simple Python program to perform mathematical calculations.</p>
             <p><b>Technology:</b> Python</p>
         </div>
     </section>
-
-    <!-- Achievements -->
     <section id="achievements">
         <h2>Achievements</h2>
         <ul>
@@ -296,34 +210,21 @@
             <li>Participating in college learning activities.</li>
         </ul>
     </section>
-
-    
-
-    <!-- Contact -->
     <section id="contact">
         <h2>Contact Me</h2>
-
         <p>Email: ganeshvyr@gmail.com</p>
         <p>Phone: 8500761357</p>
         <p>Location: Vuyyuru, India</p>
-
         <form onsubmit="alert('Thank you! Your message has been submitted.'); return false;">
             <input type="text" placeholder="Enter your name" required>
-
             <input type="email" placeholder="Enter your email" required>
-
-            <textarea rows="5" placeholder="Enter your message"
-                      required></textarea>
-
+            <textarea rows="5" placeholder="Enter your message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
-
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Ganesh | Personal Portfolio</p>
         <p>Thank you for visiting my website!</p>
     </footer>
-
 </body>
 </html>
