@@ -1,338 +1,263 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ShopEasy - Online Shopping</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Syllabus Based</title>
     <style>
         * {
             box-sizing: border-box;
         }
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f6f9;
         }
-
-        /* Navigation Bar */
-        nav {
+        header {
             background-color: #172554;
             color: white;
-            padding: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            padding: 15px;
         }
-
-        nav h2 {
-            margin: 0;
-            color: #facc15;
+        nav {
+            background-color: rgb(23, 37, 84);
+            padding: 12px;
+            text-align: center;
         }
-
+        .banner {
+            background-color: rgba(37, 99, 235, 0.9);
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        .product {
+            background-color: hsl(0, 0%, 100%);
+            border: 2px solid hsla(221, 83%, 53%, 0.5);
+        }
+        .box-style {
+            padding: 15px;
+            margin: 15px;
+            border: 2px solid #172554;
+            border-radius: 10px;
+            text-align: left;
+            text-transform: capitalize;
+            text-decoration: none;
+            text-indent: 10px;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+            line-height: 1.6;
+            background-color: white;
+        }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px;
+            margin: 0 10px;
             font-weight: bold;
         }
-
-        /* Search Bar */
-        .search {
-            padding: 10px;
-            width: 220px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        /* Promotional Banner */
-        .banner {
-            background: linear-gradient(120deg, #2563eb, #7c3aed);
-            color: white;
-            text-align: center;
-            padding: 45px 15px;
-        }
-
-        .banner h1 {
-            font-size: 35px;
-            margin: 0 0 10px;
-        }
-
-        .banner p {
-            font-size: 18px;
-        }
-
-        .banner button {
-            background-color: #facc15;
+        h2 {
             color: #172554;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Categories */
-        .categories {
             text-align: center;
-            padding: 20px;
+            text-decoration: underline;
+            text-transform: uppercase;
         }
-
-        .categories button {
-            background-color: white;
-            border: 1px solid #2563eb;
-            color: #2563eb;
-            padding: 10px 18px;
-            margin: 5px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        /* Products */
-        .heading {
-            text-align: center;
-            color: #172554;
-        }
-
         .products {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
+            width: 100%;
         }
-
+        .products::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
         .product {
-            background-color: white;
-            text-align: center;
+            float: left;
+            width: 23%;
+            margin: 1%;
             padding: 15px;
+            text-align: center;
             border-radius: 10px;
-            box-shadow: 0 3px 10px #cccccc;
         }
-
         .product img {
             width: 100%;
-            height: 180px;
+            height: 150px;
             object-fit: contain;
         }
-
-        .product h3 {
-            color: #172554;
-        }
-
         .price {
             color: #16a34a;
-            font-size: 20px;
             font-weight: bold;
+            font-size: 18px;
         }
-
         .old-price {
             color: gray;
             text-decoration: line-through;
             font-size: 14px;
         }
-
-        .rating {
-            color: #f59e0b;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
         }
-
-        .description {
-            color: #555;
-            font-size: 14px;
-            min-height: 34px;
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
         }
-
-        .product button {
-            background-color: #2563eb;
+        th {
+            background: #172554;
+            color: white;
+        }
+        fieldset {
+            border: 2px solid #172554;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        input, select, textarea {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #172554;
             color: white;
             border: none;
-            padding: 11px 18px;
             border-radius: 5px;
             cursor: pointer;
-            margin: 5px;
         }
-
-        .product button:hover {
-            background-color: #172554;
-        }
-
-        /* Footer */
         footer {
-            background-color: #172554;
+            background: #172554;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             margin-top: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                justify-content: center;
-                gap: 12px;
-            }
-
-            nav a {
-                margin: 5px;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-            .banner h1 {
-                font-size: 27px;
-            }
         }
     </style>
 </head>
-
 <body>
-
+    <header>
+        <h2 style="color:#facc15; margin:0;">ShopEasy - Online Shopping</h2>
+    </header>
     <nav>
-        <h2>ShopEasy 🛍️</h2>
-
-        <div>
-            <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <input type="text" class="search"
-               placeholder="Search products...">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#order">Order Form</a>
+        <a href="#contact">Contact</a>
+        <br><br>
+        <input type="search" placeholder="Search products...">
+        <button>Search</button>
     </nav>
-
-    <section class="banner" id="home">
-        <h1>Big Shopping Festival!</h1>
-        <p>Discover amazing products with discounts up to 50% OFF.</p>
-        <button onclick="location.href='#products'">
-            Shop Now
-        </button>
-    </section>
-
-    <section class="categories" id="categories">
-        <h2 class="heading">Shop by Category</h2>
-
-        <button onclick="location.href='#electronics'">
-            Electronics
-        </button>
-
-        <button onclick="location.href='#fashion'">
-            Fashion
-        </button>
-
-        <button onclick="location.href='#accessories'">
-            Accessories
-        </button>
-
-        <button onclick="location.href='#homeproducts'">
-            Home
-        </button>
-    </section>
-
-    <h2 class="heading" id="products">Featured Products</h2>
-
-    <section class="products">
-
-        <div class="product" id="electronics">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
-                 alt="Wireless Headphones">
-
-            <h3>Wireless Headphones</h3>
-            <p class="description">
-                High-quality sound with comfortable design.
-            </p>
-
-            <p class="rating">★★★★★ (4.8)</p>
-            <p class="price">₹1,499
-                <span class="old-price">₹2,999</span>
-            </p>
-            <p>50% OFF</p>
-
-            <button onclick="alert('Wireless Headphones added to cart!')">
-                Add to Cart
-            </button>
-        </div>
-
-        <div class="product" id="fashion">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"
-                 alt="Casual T-shirt">
-
-            <h3>Casual T-Shirt</h3>
-            <p class="description">
-                Stylish cotton T-shirt for everyday wear.
-            </p>
-
-            <p class="rating">★★★★☆ (4.5)</p>
-            <p class="price">₹499
-                <span class="old-price">₹999</span>
-            </p>
-            <p>50% OFF</p>
-
-            <button onclick="alert('Casual T-Shirt added to cart!')">
-                Add to Cart
-            </button>
-        </div>
-
-        <div class="product" id="accessories">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
-                 alt="Smart Watch">
-
-            <h3>Smart Watch</h3>
-            <p class="description">
-                Track your fitness and daily activities.
-            </p>
-
-            <p class="rating">★★★★★ (4.7)</p>
-            <p class="price">₹1,999
-                <span class="old-price">₹3,999</span>
-            </p>
-            <p>50% OFF</p>
-
-            <button onclick="alert('Smart Watch added to cart!')">
-                Add to Cart
-            </button>
-        </div>
-
-        <div class="product" id="homeproducts">
-            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80"
-                 alt="Table Lamp">
-
-            <h3>Modern Table Lamp</h3>
-            <p class="description">
-                Beautiful lamp for your home and study table.
-            </p>
-
-            <p class="rating">★★★★☆ (4.3)</p>
-            <p class="price">₹799
-                <span class="old-price">₹1,599</span>
-            </p>
-            <p>50% OFF</p>
-
-            <button onclick="alert('Modern Table Lamp added to cart!')">
-                Add to Cart
-            </button>
-        </div>
-
-    </section>
-
+    <main>
+        <section class="banner" id="home">
+            <h1>Big Shopping Festival!</h1>
+            <p><b>50% OFF</b> on all products - <i>Limited Time</i> <mark>Offer!</mark></p>
+            <p><small>Hurry up</small> <del>Rs.2999</del> <ins>Now Rs.1499</ins> - H<sub>2</sub>O offer, Power 2<sup>3</sup></p>
+            <hr>
+            <div style="background:white; color:#172554; display:inline-block; padding:5px 10px; border-radius:5px;">div is Block, <span style="background:#facc15;">span is Inline</span></div>
+            <br><br>
+            <picture>
+                <source media="(min-width: 700px)" srcset="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80" alt="Festival Offer">
+            </picture>
+        </section>
+        <section id="categories" class="box-style">
+            <h2>Shop by Category - Lists Demo</h2>
+            <div style="display:inline-block; width:30%; vertical-align:top;">
+                <h3>Ordered List</h3>
+                <ol type="A" start="2" reversed>
+                    <li>Electronics</li>
+                    <li>Fashion</li>
+                    <li>Home</li>
+                </ol>
+            </div>
+            <div style="display:inline-block; width:30%; vertical-align:top;">
+                <h3>Unordered List</h3>
+                <ul><li>Headphones</li><li>T-Shirts</li></ul>
+            </div>
+            <div style="display:inline-block; width:30%; vertical-align:top;">
+                <h3>Definition List</h3>
+                <dl>
+                    <dt>GET</dt><dd>Search visible in URL</dd>
+                    <dt>POST</dt><dd>Order details secure</dd>
+                </dl>
+            </div>
+        </section>
+        <h2 id="products">Featured Products - Float Layout</h2>
+        <section class="products">
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p class="price">₹1,499 <span class="old-price">₹2,999</span></p>
+                <p><strong>50% OFF</strong> - <em>Best Seller</em></p>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="T-shirt">
+                <h3>Casual T-Shirt</h3>
+                <p class="price">₹499 <span class="old-price">₹999</span></p>
+                <p><strong>50% OFF</strong> - <em>New</em></p>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Watch">
+                <h3>Smart Watch</h3>
+                <p class="price">₹1,999 <span class="old-price">₹3,999</span></p>
+                <p><strong>50% OFF</strong></p>
+                <button>Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80" alt="Lamp">
+                <h3>Table Lamp</h3>
+                <p class="price">₹799 <span class="old-price">₹1,599</span></p>
+                <p><strong>50% OFF</strong></p>
+                <button>Add to Cart</button>
+            </article>
+        </section>
+        <div style="clear:both;"></div>
+        <aside style="background:#fff3cd; padding:10px; margin:15px; border-radius:5px; text-align:center;">
+            <b>Image Map Demo</b><br>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=200&q=80" usemap="#shopmap" alt="Shop">
+            <map name="shopmap">
+                <area shape="rect" coords="0,0,200,200" href="#products" alt="Go to Products">
+            </map>
+            <br><small>Click on watch image to go to products</small>
+        </aside>
+        <section style="padding:15px;">
+            <h2>Price Catalog - Table with Colspan & Rowspan</h2>
+            <table>
+                <colgroup><col span="2" style="background:#eef3f8"><col><col></colgroup>
+                <tr><th>Product ID</th><th>Name</th><th>Category</th><th>Price</th></tr>
+                <tr><td>P101</td><td>Headphones</td><td rowspan="2">Electronics</td><td>₹1499</td></tr>
+                <tr><td>P102</td><td>Smart Watch</td><td>₹1999</td></tr>
+                <tr><td colspan="3" style="text-align:center;"><b>Total Discount</b></td><td><b>50% OFF</b></td></tr>
+            </table>
+        </section>
+        <section id="order" style="padding:15px;">
+            <h2>Order Form - All 15 Input Types</h2>
+            <form method="get">
+                <fieldset>
+                    <legend>Customer Details</legend>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="password" placeholder="Password">
+                    <input type="email" placeholder="Email">
+                    <input type="number" placeholder="Quantity">
+                    <input type="tel" placeholder="Phone">
+                    <input type="search" placeholder="Search Product">
+                    <br>
+                    Gender: <input type="radio" name="g">Male <input type="radio" name="g">Female
+                    Payment: <input type="checkbox">COD <input type="checkbox">UPI
+                    <br>
+                    <input type="date"> <input type="time"> <input type="color"> <input type="range"> <input type="file">
+                    <br><br>
+                    City: <select><optgroup label="AP"><option>Vijayawada</option><option>Guntur</option></optgroup><optgroup label="Other"><option>Hyderabad</option></optgroup></select>
+                    <input list="areas" placeholder="Select Area"><datalist id="areas"><option value="Vuyyuru"><option value="Machilipatnam"></datalist>
+                    <br><br>
+                    <textarea placeholder="Delivery Address"></textarea><br>
+                    <button type="submit">Place Order</button> <button type="reset">Reset</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
     <footer id="contact">
-        <h3>ShopEasy Online Store</h3>
-        <p>Happy Shopping! Quality Products at Great Prices.</p>
-        <p>Contact: support@shopeasy.example</p>
-        <p>© 2026 ShopEasy. All Rights Reserved.</p>
+        <p>© 2026 ShopEasy - Contact: support@shopeasy.example</p>
     </footer>
-
 </body>
 </html>
